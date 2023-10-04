@@ -15,33 +15,9 @@
         ];
 
         btn_1.addEventListener('click', e => {
-            switch (bigImg.alt) {
-                case 'sukuna' :
-                    img_1.setAttribute('class', 'first-img');
-                    img_2.setAttribute('class','second-img');
-                    img_3.setAttribute('class', 'third-img');
-                break;
-                case 'satoru' :
-                    img_1.setAttribute('class', 'third-img');
-                    img_2.setAttribute('class', 'first-img');
-                    img_3.setAttribute('class', 'second-img');
-                    setTimeout(() => {
-                        img_1.setAttribute('class', 'first-img');
-                        img_2.setAttribute('class','second-img');
-                        img_3.setAttribute('class', 'third-img');
-                    }, 10);
-                break;
-                case 'idk' :
-                    img_1.setAttribute('class', 'second-img');
-                    img_2.setAttribute('class', 'third-img');
-                    img_3.setAttribute('class', 'first-img');
-                    setTimeout(() => {
-                        img_1.setAttribute('class', 'first-img');
-                        img_2.setAttribute('class','second-img');
-                        img_3.setAttribute('class', 'third-img');
-                    }, 10);
-                break;
-            }
+            img_1.setAttribute('class', 'first-img');
+            img_2.setAttribute('class','second-img');
+            img_3.setAttribute('class', 'third-img');
             img_1.classList.add('bigImg');
             img_2.classList.remove('bigImg');
             img_3.classList.remove('bigImg');
@@ -51,33 +27,9 @@
         })
 
         btn_2.addEventListener('click', e => {
-            switch (bigImg.alt) {
-                case 'sukuna' :
-                    img_1.setAttribute('class', 'first-img');
-                    img_2.setAttribute('class', 'second-img');
-                    img_3.setAttribute('class', 'third-img');
-                    setTimeout(() => {
-                        img_1.setAttribute('class', 'third-img');
-                        img_2.setAttribute('class','first-img');
-                        img_3.setAttribute('class', 'second-img');
-                    }, 10);
-                break;
-                case 'satoru' :
-                    img_1.setAttribute('class', 'third-img');
-                    img_2.setAttribute('class','first-img');
-                    img_3.setAttribute('class', 'second-img');
-                break;
-                case 'idk' :
-                    img_1.setAttribute('class', 'second-img');
-                    img_2.setAttribute('class', 'third-img');
-                    img_3.setAttribute('class', 'first-img');
-                    setTimeout(() => {
-                        img_1.setAttribute('class', 'third-img');
-                        img_2.setAttribute('class','first-img');
-                        img_3.setAttribute('class', 'second-img');
-                    }, 10);
-                break;
-            }
+            img_1.setAttribute('class', 'third-img');
+            img_2.setAttribute('class','first-img');
+            img_3.setAttribute('class', 'second-img');
             img_2.classList.add('bigImg');
             img_3.classList.remove('bigImg');
             img_1.classList.remove('bigImg');
@@ -87,33 +39,9 @@
         })
 
         btn_3.addEventListener('click', e => {
-            switch (bigImg.alt) {
-                case 'sukuna' :
-                    img_1.setAttribute('class', 'first-img');
-                    img_2.setAttribute('class', 'second-img');
-                    img_3.setAttribute('class', 'third-img');
-                    setTimeout(() => {
-                        img_1.setAttribute('class', 'second-img');
-                        img_2.setAttribute('class','third-img');
-                        img_3.setAttribute('class', 'first-img');
-                    }, 10);
-                break;
-                case 'satoru' :
-                    img_1.setAttribute('class', 'third-img');
-                    img_2.setAttribute('class', 'first-img');
-                    img_3.setAttribute('class', 'second-img');
-                    setTimeout(() => {
-                        img_1.setAttribute('class', 'second-img');
-                        img_2.setAttribute('class','third-img');
-                        img_3.setAttribute('class', 'first-img');
-                    }, 10);
-                break;
-                case 'idk' :
-                    img_1.setAttribute('class', 'second-img');
-                    img_2.setAttribute('class','third-img');
-                    img_3.setAttribute('class', 'first-img');
-                break;
-            }
+            img_1.setAttribute('class', 'second-img');
+            img_2.setAttribute('class','third-img');
+            img_3.setAttribute('class', 'first-img');
             img_3.classList.add('bigImg');
             img_2.classList.remove('bigImg');
             img_1.classList.remove('bigImg');
