@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+
+@layer components {
+    .first-img {
+        @apply z-10 mx-auto w-[360px] h-[380px] absolute bottom-0 left-[50%] translate-x-[-50%]
+    }
+    .second-img {
+        @apply z-0 absolute w-[200px] h-[220px] top-0 left-0 max-lg:w-[230px] max-lg:h-[250px] max-sm:hidden
+    }
+    .third-img {
+        @apply z-0 absolute w-[200px] h-[220px] top-0 right-0 max-lg:w-[230px] max-lg:h-[250px] max-sm:hidden
+    }
+
+    .img-button-1, .img-button-2, .img-button-3 {
+        @apply w-[140px] h-[160px] px-5
+    }
+
+    .active {
+        @apply border-2 border-black
+    }
+}
