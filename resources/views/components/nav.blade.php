@@ -6,7 +6,7 @@
         </a>
         <ul class="flex gap-6 items-center">
             <li class="hover:text-slate-700 hover:border-slate-700 hover:scale-[1.1] transition-all duration-75 border-black border-b-4"><a class="font-bold text-xl" href="/">Home</a></li>
-            <li class="hover:text-slate-700 hover:scale-[1.1] transition-all duration-75"><a class="font-bold text-lg" href="/blogs">Blogs</a></li>
+            <li class="hover:text-slate-700 hover:scale-[1.1] transition-all duration-75"><a class="font-bold text-lg" href="/#blogs">Blogs</a></li>
             <li class="hover:text-slate-700 hover:scale-[1.1] transition-all duration-75"><a class="font-bold text-lg" href="/create">Create</a></li>
         </ul>
     </nav>

@@ -57,7 +57,7 @@
             <h1 class="text-3xl font-bold text-slate-800">Eclectic <span class="text-black">Euphoria</span>: Unveiling the Depths of Knowledge</h1>
             <p class="text-md font-sans leading-7 opacity-75">Welcome to our blog website! Here, we strive to provide you with engaging and informative content on a variety of topics, from lifestyle and travel to technology and business. Our team of experienced writers and researchers work tirelessly to bring you the latest news, insights, and trends, all in one convenient online hub. Whether you're looking for entertainment, education, or simply a way to stay up-to-date with the world around you, we've got you covered. So, sit back, relax, and explore our blog to your heart's content!</p>
             <div>
-                <a href="/blogs" class="px-6 py-4 text-3xl rounded-xl text-yellow-400 bg-black focus:ring-4 focus:ring-slate-700 hover:shadow-xl hover:bg-slate-900 transition-all duration-150">View Blogs</a>
+                <a href="#blogs" class="px-6 py-4 text-3xl rounded-xl text-yellow-400 bg-black focus:ring-4 focus:ring-slate-700 hover:shadow-xl hover:bg-slate-900 transition-all duration-150">View Blogs</a>
             </div>
             <h2 class="text-1xl font-bold">
                 Get ready to explore a vast array of topics that will captivate your imagination, ignite your curiosity, and spark meaningful conversations. Our blog is a treasure trove of thought-provoking articles, engaging stories, informative guides, and entertaining anecdotes.
@@ -68,19 +68,19 @@
         </div>
         <div class="flex-1 space-y-10">
             <div class="h-[450px] relative justify-center items-center">
-                <img src="sukuna.png" alt="sukuna" class="first-img bigImg" id="sukuna" />
-                <img src="satoru.png" alt="satoru" class="second-img" id="satoru" />
-                <img src="idk.png" alt="idk" class="third-img" id="idk" />
+                <img src="/sukuna.png" alt="sukuna" class="first-img bigImg" id="sukuna" />
+                <img src="/satoru.png" alt="satoru" class="second-img" id="satoru" />
+                <img src="/idk.png" alt="idk" class="third-img" id="idk" />
             </div>
             <div class="flex items-center justify-between">
                 <button class="img-button-1 active">
-                    <img src="sukuna.png" alt=""/>
+                    <img src="/sukuna.png" alt=""/>
                 </button>
                 <button class="img-button-2">
-                    <img src="satoru.png" alt=""/>
+                    <img src="/satoru.png" alt=""/>
                 </button>
                 <button class="img-button-3">
-                    <img src="idk.png" alt=""/>
+                    <img src="/idk.png" alt=""/>
                 </button>
             </div>
         </div>
