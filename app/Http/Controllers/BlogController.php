@@ -9,7 +9,13 @@ class BlogController extends Controller
 {
     public function index () {
         return view('pages.index', [
-            "blogs" => Blog::all()
+            "blogs" => Blog::with('author')->get()
+        ]);
+    }
+
+    public function show (Blog $slug) {
+        return view("pages.show", [
+            "blog" => $slug
         ]);
     }
 }
