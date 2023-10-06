@@ -10,8 +10,12 @@ use Illuminate\Http\Request;
 class BlogController extends Controller
 {
     public function index () {
+        $blogs = Blog::latest();
+        if (request('search')) {
+            $blogs->where('title', 'LIKE', '%'.request('search').'%');
+        }
         return view('pages.index', [
-            "blogs" => Blog::with('author', 'category')->latest()->get(),
+            "blogs" => $blogs->get(),
             "categories" => Category::all()
         ]);
     }
@@ -25,14 +29,14 @@ class BlogController extends Controller
 
     public function filter_author (User $user) {
         return view('pages.index', [
-            "blogs" => $user->blogs->load('author', 'category'),
+            "blogs" => $user->blogs->all(),
             "categories" => Category::all()
         ]);
     }
 
     public function filter_category (Category $category) {
         return view('pages.index', [
-            "blogs" => $category->blogs->load('author', 'category'),
+            "blogs" => $category->blogs->all(),
             "categories" => Category::all(),
             "currentCategory" => $category
         ]);

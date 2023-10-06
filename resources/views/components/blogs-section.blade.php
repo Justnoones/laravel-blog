@@ -8,9 +8,12 @@
             :currentCategory="$currentCategory"
         />
     </div>
+    <x-blog-serach-bar />
     <div class="p-5 grid grid-cols-3 max-xl:grid-cols-2 max-md:grid-cols-1 gap-10">
-        @foreach ($blogs as $blog)
+        @forelse ($blogs as $blog)
             <x-blog-card :blog="$blog" />
-        @endforeach
+            @empty
+            <p class="text-yellow-400 text-xl font-bold justify-self-center col-span-full">No Blogs Found.</p>
+        @endforelse
     </div>
 </section>
