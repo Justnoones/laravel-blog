@@ -11,7 +11,8 @@ class BlogController extends Controller
 {
     public function index () {
         return view('pages.index', [
-            "blogs" => Blog::with('author', 'category')->latest()->get()
+            "blogs" => Blog::with('author', 'category')->latest()->get(),
+            "categories" => Category::all()
         ]);
     }
 
@@ -24,13 +25,16 @@ class BlogController extends Controller
 
     public function filter_author (User $user) {
         return view('pages.index', [
-            "blogs" => $user->blogs->load('author', 'category')
+            "blogs" => $user->blogs->load('author', 'category'),
+            "categories" => Category::all()
         ]);
     }
 
     public function filter_category (Category $category) {
         return view('pages.index', [
-            "blogs" => $category->blogs->load('author', 'category')
+            "blogs" => $category->blogs->load('author', 'category'),
+            "categories" => Category::all(),
+            "currentCategory" => $category
         ]);
     }
 }

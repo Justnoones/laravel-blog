@@ -3,5 +3,9 @@
         Home
     </x-slot>
     <x-hero-section />
-    <x-cards-section :blogs="$blogs" />
+    <x-blogs-section
+        :blogs="$blogs"
+        :categories="$categories"
+        :currentCategory="$currentCategory??null"
+    />
 </x-layout>
