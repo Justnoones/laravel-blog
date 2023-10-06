@@ -10,12 +10,8 @@ use Illuminate\Http\Request;
 class BlogController extends Controller
 {
     public function index () {
-        $blogs = Blog::latest();
-        if (request('search')) {
-            $blogs->where('title', 'LIKE', '%'.request('search').'%');
-        }
         return view('pages.index', [
-            "blogs" => $blogs->get(),
+            "blogs" => $this->getBlogs(),
             "categories" => Category::all()
         ]);
     }
@@ -40,5 +36,18 @@ class BlogController extends Controller
             "categories" => Category::all(),
             "currentCategory" => $category
         ]);
+    }
+
+    protected function getBlogs () {
+        $blogs = Blog::latest();
+        // if (request('search')) {
+        //     $blogs->where('title', 'LIKE', '%'.request('search').'%')
+        //     ->orWhere('body', 'LIKE', '%'.request('search').'%');
+        // }
+        $blogs->when(request('search'), function ($query, $search) {
+            $query->where('title', 'LIKE', '%'.$search.'%')
+            ->orWhere('body', 'LIKE', '%'.$search.'%');
+        });
+        return $blogs->get();
     }
 }
