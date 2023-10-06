@@ -21,6 +21,14 @@ class Blog extends Model
         'body',
     ];
 
+    public function scopeFilter ($query, $filter) {
+        $query->when($filter['search']??false, function ($query, $search) {
+            $query->where('title', 'LIKE', '%'.$search.'%')
+            ->orWhere('body', 'LIKE', '%'.$search.'%');
+        });
+        return $query;
+    }
+
     protected $with = ['category', 'author'];
 
     public function author() {
