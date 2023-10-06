@@ -11,7 +11,7 @@ class BlogController extends Controller
 {
     public function index () {
         return view('pages.index', [
-            "blogs" => Blog::latest()->filter(request(['search']))->get(),
+            "blogs" => Blog::latest()->filter(request(['search', 'category', 'author']))->get(),
             "categories" => Category::all()
         ]);
     }
@@ -20,21 +20,6 @@ class BlogController extends Controller
         return view("pages.show", [
             "blog" => $blog,
             "randomBlogs" => Blog::with('author', 'category')->inRandomOrder()->take(3)->get()
-        ]);
-    }
-
-    public function filter_author (User $user) {
-        return view('pages.index', [
-            "blogs" => $user->blogs->all(),
-            "categories" => Category::all()
-        ]);
-    }
-
-    public function filter_category (Category $category) {
-        return view('pages.index', [
-            "blogs" => $category->blogs->all(),
-            "categories" => Category::all(),
-            "currentCategory" => $category
         ]);
     }
 }

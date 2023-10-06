@@ -26,8 +26,18 @@ class Blog extends Model
             $query->where(function ($query) use ($search) {
                 $query->where('title', 'LIKE', '%'.$search.'%')
                     ->orWhere('body', 'LIKE', '%'.$search.'%');
-            })
-            ->where('title', 'frontend');
+            });
+        });
+
+        $query->when($filter['category']??false, function($query, $slug) {
+            $query->whereHas('category', function ($query) use ($slug) {
+                $query->where('slug', $slug);
+            });
+        });
+        $query->when($filter['author']??false, function ($query, $username) {
+            $query->whereHas('author', function ($query) use ($username) {
+                $query->where('username', $username);
+            });
         });
         return $query;
     }
