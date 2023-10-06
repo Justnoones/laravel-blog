@@ -10,12 +10,8 @@ use Illuminate\Http\Request;
 class BlogController extends Controller
 {
     public function index () {
-        $blogs = Blog::latest();
-        if (request('search')) {
-            $blogs->where('title', 'LIKE', '%'.request('search').'%');
-        }
         return view('pages.index', [
-            "blogs" => $blogs->get(),
+            "blogs" => Blog::latest()->filter(request(['search', 'category', 'author']))->get(),
             "categories" => Category::all()
         ]);
     }

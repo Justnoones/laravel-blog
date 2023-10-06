@@ -8,7 +8,7 @@
         Author - <a href={{"/author/".$blog->author->username}} class="font-bold">{{$blog->author->name}}</a>
     </h2>
     <div class="cursor-pointer flex-1">
-        <a class="bg-slate-900 text-yellow-400 px-2 py-1 rounded-lg" href={{"/categories/".$blog->category->slug}}>
+        <a class="bg-slate-900 text-yellow-400 px-2 py-1 rounded-lg" href="/?category={{$blog->category->slug}}">
             {{$blog->category->name}}
         </a>
     </div>
