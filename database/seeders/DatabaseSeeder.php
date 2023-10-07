@@ -34,11 +34,11 @@ class DatabaseSeeder extends Seeder
             'slug' => 'backend'
         ]);
 
-        Blog::factory(10)->create([
+        Blog::factory(100)->create([
             'category_id' => 1,
         ]);
 
-        Blog::factory(10)->create([
+        Blog::factory(100)->create([
             'category_id' => 2,
         ]);
     }

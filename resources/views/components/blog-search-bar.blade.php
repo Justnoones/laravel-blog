@@ -5,8 +5,23 @@
             name="search"
             placeholder="Search Blogs"
             class="placeholder:text-black bg-inherit outline-none col-span-3 self-center justify-self-center w-full"
-            value={{request('search')?request('search'):null}}
+            value="{{request('search')?request('search'):null}}"
+            autocomplete="off"
         >
+        @if (request('category'))
+            <input
+                type="hidden"
+                name="category"
+                value="{{request('category')}}"
+            >
+        @elseif (request('author'))
+        <input
+            type="hidden"
+            name="author"
+            value="{{request('author')}}"
+        >
+        @endif
+
         <button
             type="submit"
             class="border-s-2 border-black sm:space-x-1">

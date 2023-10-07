@@ -24,7 +24,7 @@
       <div class="py-1">
         <a href="/" class="text-gray-700 block px-4 py-2 text-sm">All</a>
         @foreach ($categories as $category)
-            <a href="/?category={{$category->slug}}" class="text-gray-700 block px-4 py-2 text-sm">{{$category->name}}</a>
+            <a href="/?category={{$category->slug}}{{request('search')?'&search='.request('search'):''}}{{request('author')?'&author='.request('author'):''}}" class="text-gray-700 block px-4 py-2 text-sm">{{$category->name}}</a>
         @endforeach
         </form>
       </div>
