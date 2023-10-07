@@ -5,7 +5,5 @@
     <x-hero-section />
     <x-blogs-section
         :blogs="$blogs"
-        :categories="$categories"
-        :currentCategory="$currentCategory??null"
     />
 </x-layout>
