@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class BlogController extends Controller
 {
     public function index () {
-        return view('pages.index', [
+        return view('blogs.index', [
             "blogs" => Blog::latest()
                         ->filter(request(['search', 'category', 'author']))
                         ->paginate(6)
@@ -19,7 +19,7 @@ class BlogController extends Controller
     }
 
     public function show (Blog $blog) {
-        return view("pages.show", [
+        return view("blogs.show", [
             "blog" => $blog,
             "randomBlogs" => Blog::with('author', 'category')->inRandomOrder()->take(3)->get()
         ]);
