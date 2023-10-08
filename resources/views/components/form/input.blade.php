@@ -9,5 +9,8 @@
         <span>{{$label}}</span>
     </label>
     <span class="border-l-2 border-black"></span>
-    <input type="{{$type}}" name="{{$name}}" id="{{$id}}" class="bg-inherit px-3 outline-none focus:outline-none py-2 max-md:border-b-2 max-md:border-black md:flex-[10] flex-1 placeholder:text-black" autocomplete="off" placeholder="{{$placeHolder}}" >
+    <input type="{{$type}}" name="{{$name}}" id="{{$id}}" class="bg-inherit px-3 outline-none focus:outline-none py-2 max-md:border-b-2 max-md:border-black md:flex-[10] flex-1 placeholder:text-black" autocomplete="off" placeholder="{{$placeHolder}}" value="{{old($name)}}" >
+    @error($name)
+        <p>{{$message}}</p>
+    @enderror
 </div>
