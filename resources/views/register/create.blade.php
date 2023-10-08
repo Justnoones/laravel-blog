@@ -3,8 +3,10 @@
         Register
     </x-slot>
     <main class="bg-yellow-300 p-10">
-        <form action="">
+        <form action="/register" method="POST">
+            @csrf
             <x-form.form-wrapper >
+                <h1 class="text-black text-4xl font-bold uppercase">Register Form</h1>
                 <x-form.input type="text" name="name" id="name" label="Name" placeHolder="Enter Your Name" iconClassName="fa-solid fa-user" />
                 <x-form.input type="text" name="username" id="username" label="User Name" placeHolder="Enter Your User Name" iconClassName="fa-solid fa-user" />
                 <x-form.input type="email" name="email" id="email" label="Email" placeHolder="Enter Your Email Address" iconClassName="fa-solid fa-envelope" />
