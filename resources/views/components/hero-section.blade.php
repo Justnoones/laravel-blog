@@ -51,7 +51,7 @@
         })
     })
 </script>
-<section class="px-5 py-2 gap-4 space-y-10 bg-yellow-300">
+<section class="px-10 py-2 gap-4 space-y-10 bg-yellow-300">
     <div class="flex flex-row max-xl:flex-col">
         <div class="max-2xl:space-y-20 max-xl:space-y-8 space-y-10 flex-1">
             <h1 class="text-3xl font-bold text-slate-800">Eclectic <span class="text-black">Euphoria</span>: Unveiling the Depths of Knowledge</h1>
