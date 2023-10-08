@@ -5,7 +5,6 @@
             <img src='/duck.png' alt="clover_icon" width="75" height="75" />
         </a>
         <ul class="flex gap-6 items-center">
-            <li class="hover:text-slate-700 hover:scale-[1.1] transition-all duration-75"><a class="font-bold text-xl" href="/">Home</a></li>
             <li class="hover:text-slate-700 hover:scale-[1.1] transition-all duration-75"><a class="font-bold text-lg" href="/#blogs">Blogs</a></li>
             <li class="hover:text-slate-700 hover:scale-[1.1] transition-all duration-75"><a class="font-bold text-lg" href="/register">Register</a></li>
         </ul>

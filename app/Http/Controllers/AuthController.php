@@ -20,6 +20,8 @@ class AuthController extends Controller
             'password' => ['required', 'min:8', 'max:255']
         ]);
         User::create($validated_user);
-        return redirect('/');
+        // session()->flash('flash-message', 'Successfully registered');
+        // return redirect('/');
+        return redirect('/')->with('flash-message', 'Successfully registered.');
     }
 }
