@@ -1,7 +1,7 @@
 @props(['comment'])
 <div class="flex flex-col border-2 border-white rounded-lg p-5 shadow-2xl bg-black bg-opacity-20 gap-y-5">
     <div class="flex gap-x-4">
-        <img src="{{$comment->author->avatar}}" class="w-14 h-14 rounded-full">
+        <img src="{{$comment->author->avatar??'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLA27the13VWzm6cpWVUr0naA3KarbgSSHVQ&usqp=CAU'}}" class="w-14 h-14 rounded-full">
         <div class="flex flex-col gap-y-1">
             <h4 class="text-1xl font-bold text-white">{{$comment->author->name}}</h4>
             <p class="text-lg text-white text-opacity-70">{{$comment->created_at->diffForhumans()}}</p>

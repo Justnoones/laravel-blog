@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
@@ -8,7 +9,11 @@ Route::get('/', [BlogController::class, 'index']);
 Route::get('/home', [BlogController::class, 'index']);
 Route::get('/blogs/{blog:slug}', [BlogController::class, 'show']);
 
-Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth');
+Route::middleware(['auth'])->group(function () {
+    Route::post('/logout', [AuthController::class, 'logout']);
+    Route::post('/blogs/{blog:slug}/comment', [CommentController::class, 'create']);
+});
+
 
 Route::middleware(['guest'])->group(function () {
     Route::get('/register', [AuthController::class, 'create']);

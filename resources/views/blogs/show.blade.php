@@ -24,12 +24,12 @@
         </div>
         @auth
         <div
-            class="max-w-[1200px] w-full flex flex-col border-2 border-white rounded-lg p-5 shadow-2xl bg-black bg-opacity-20 gap-y-5"
+            class="max-w-[1200px] w-full flex flex-col border-2 @error('body') border-red-500 @else border-white @enderror rounded-lg p-5 shadow-2xl bg-black bg-opacity-20 gap-y-5"
         >
-            <x-comment-form />
+            <x-comment-form :blog="$blog" />
         </div>
         @else
-            <h4 class="text-white text-3xl">Please <a href="/login" class="text-blue-300 font-bold border-b-2 border-blue-300">Login</a> & <a href="/register" class="text-blue-300 font-bold border-b-2 border-blue-300">Register</a> to participate in this discussion.</h4>
+            <h4 class="text-white text-2xl">Please <a href="/login" class="text-blue-300 font-bold border-b-2 border-blue-300">Login</a> & <a href="/register" class="text-blue-300 font-bold border-b-2 border-blue-300">Register</a> to participate in this discussion.</h4>
         @endauth
         <x-comments :comments="$blog->comments" />
         <x-blogs-you-may-like :randomBlogs="$randomBlogs" />
