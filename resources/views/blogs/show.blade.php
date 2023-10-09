@@ -22,6 +22,7 @@
             </a>
             <p class="text-lg font-bold opacity-60">{{$blog->intro}}{{$blog->body}}</p>
         </div>
+        <x-comments />
         <x-blogs-you-may-like :randomBlogs="$randomBlogs" />
     </section>
 </x-layout>
