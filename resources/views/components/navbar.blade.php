@@ -23,8 +23,13 @@
                 </li>
             @else
                 <li class="hover:text-slate-700 hover:scale-[1.1] transition-all duration-75">
-                    <a class="font-bold text-lg">
-                        Welcome {{auth()->user()->name}}
+                    <a class="font-bold text-lg flex items-center gap-2">
+                        <img
+                            src={{auth()->user()->avatar??'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLA27the13VWzm6cpWVUr0naA3KarbgSSHVQ&usqp=CAU'}}
+                            alt="useravatar"
+                            class="w-12 h-12 rounded-full"
+                        >
+                        {{auth()->user()->name}}
                     </a>
                 </li>
                 <form action="/logout" method="POST">
