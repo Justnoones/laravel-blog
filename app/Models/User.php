@@ -46,7 +46,18 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function blogs () {
+    public function blogs ()
+    {
         return $this->hasMany(Blog::class);
+    }
+
+    public function subscribedBlogs ()
+    {
+        return $this->belongsToMany(Blog::class);
+    }
+
+    public function isSubscribed ($blog)
+    {
+        return auth()->user()->subscribedBlogs && auth()->user()->subscribedBlogs->contains('id', $blog->id);
     }
 }

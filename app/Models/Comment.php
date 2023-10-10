@@ -20,11 +20,13 @@ class Comment extends Model
         'blog'
     ];
 
-    public function author () {
+    public function author ()
+    {
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function blog () {
+    public function blog ()
+    {
         return $this->belongsTo(Blog::class);
     }
 }

@@ -38,7 +38,7 @@ class AuthController extends Controller
             'password' => ['required', 'min:8', 'max:255']
         ]);
         if (auth()->attempt($formData)) {
-            return redirect('/')->with('flash-message', 'Successfully Logged in!');
+            return redirect()->back()->with('flash-message', 'Successfully Logged in!');
         } else {
             return redirect()->back()->with('flash-message', 'Invalid Credentials! Please try again.');
         }

@@ -12,6 +12,7 @@ Route::get('/blogs/{blog:slug}', [BlogController::class, 'show']);
 Route::middleware(['auth'])->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::post('/blogs/{blog:slug}/comment', [CommentController::class, 'create']);
+    Route::post('/subscription/{blog:slug}', [BlogController::class, 'subscription_controller']);
 });
 
 
