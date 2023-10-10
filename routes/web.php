@@ -9,12 +9,17 @@ Route::get('/', [BlogController::class, 'index']);
 Route::get('/home', [BlogController::class, 'index']);
 Route::get('/blogs/{blog:slug}', [BlogController::class, 'show']);
 
+Route::middleware(['admin'])->group(function () {
+    Route::get('/admin/blogs/create', function () {
+        return 'hello world';
+    });
+});
+
 Route::middleware(['auth'])->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::post('/blogs/{blog:slug}/comment', [CommentController::class, 'create']);
     Route::post('/subscription/{blog:slug}', [BlogController::class, 'subscription_controller']);
 });
-
 
 Route::middleware(['guest'])->group(function () {
     Route::get('/register', [AuthController::class, 'create']);
