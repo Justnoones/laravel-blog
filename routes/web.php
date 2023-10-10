@@ -10,9 +10,8 @@ Route::get('/home', [BlogController::class, 'index']);
 Route::get('/blogs/{blog:slug}', [BlogController::class, 'show']);
 
 Route::middleware(['admin'])->group(function () {
-    Route::get('/admin/blogs/create', function () {
-        return 'hello world';
-    });
+    Route::get('/admin/blogs/create', [BlogController::class, 'create']);
+    Route::post('/admin/blogs/store', [BlogController::class, 'store']);
 });
 
 Route::middleware(['auth'])->group(function () {

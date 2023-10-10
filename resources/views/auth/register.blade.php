@@ -2,7 +2,7 @@
     <x-slot name="title">
         Register
     </x-slot>
-    <main class="bg-yellow-300 p-10">
+    <section class="bg-yellow-300 p-10">
         <form action="/register" method="POST">
             @csrf
             <x-form.form-wrapper >
@@ -17,5 +17,5 @@
                 </div>
             </x-form.form-wrapper>
         </form>
-    </main>
+    </section>
 </x-layout>
