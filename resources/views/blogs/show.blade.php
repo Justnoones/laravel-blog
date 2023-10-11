@@ -12,7 +12,7 @@
             {{$blog['title']}}
         </h1>
         <div class="flex items-center justify-center flex-col gap-y-5 bg-yellow-300 rounded-xl p-10 max-w-7xl">
-            <img src="https://i.pinimg.com/564x/84/e1/11/84e1114dd10b1787231c7561ca7e9e57.jpg">
+            <img src='{{$blog->thumbnail ? asset("storage/$blog->thumbnail") : "https://i.pinimg.com/564x/84/e1/11/84e1114dd10b1787231c7561ca7e9e57.jpg"}}'>
 
             <h2 class="text-xl text-black">
                 Author - <a href={{"/author/".$blog->author->username}} class="font-bold">

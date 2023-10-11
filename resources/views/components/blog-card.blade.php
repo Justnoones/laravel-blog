@@ -1,6 +1,6 @@
 @props(['blog'])
 <div class="flex flex-col bg-yellow-300 px-5 py-10 space-y-8 rounded-lg min-h-[800px]">
-    <img src="https://i.pinimg.com/564x/84/e1/11/84e1114dd10b1787231c7561ca7e9e57.jpg">
+    <img src='{{$blog->thumbnail ? asset("storage/$blog->thumbnail") : "https://i.pinimg.com/564x/84/e1/11/84e1114dd10b1787231c7561ca7e9e57.jpg"}}'>
     <h1 class="text-2xl font-bold flex-1">
         {{$blog->title}}
     </h1>

@@ -1,0 +1,2 @@
+php artisan public:storage
+filesystems.php => local to public or .env FILESYSTEM_DISK=local to FILESYSTEM_DISK=public
