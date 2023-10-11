@@ -38,7 +38,7 @@ class BlogController extends Controller
             'category_id' => ['required', Rule::exists('categories', 'id')]
         ]);
         $validated_data['user_id'] = auth()->id();
-        $validated_data['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
+        request('thumbnail') && $validated_data['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
         $blog = Blog::create($validated_data);
         return redirect("/blogs/$blog->slug")->with('flash-message', 'Successfully created a new blog.');
     }

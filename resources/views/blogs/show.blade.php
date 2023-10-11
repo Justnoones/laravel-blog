@@ -35,7 +35,7 @@
             <a  href={{"/categories/".$blog->category->slug}} class="bg-black px-2 py-1 rounded-xl text-yellow-300 text-opacity-70 font-bold">
                 {{$blog->category->name}}
             </a>
-            <p class="text-lg font-bold opacity-60">{{$blog->intro}}{{$blog->body}}</p>
+            <p class="text-lg font-bold opacity-60">{!! $blog->intro !!}{!! $blog->body !!}</p>
         </div>
         @auth
         <div
